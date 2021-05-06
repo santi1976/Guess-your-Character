@@ -1,0 +1,25 @@
+body {
+    background: rgb(98, 151, 158);
+    font-family: Verdana;
+}
+
+h1, h3  {
+    text-align: center;
+    
+}
+
+
+#container {
+    text-align: center;
+    padding: 10em;
+    margin: 0 auto;
+    border-color: #FFFFFF #327CB5 #327CB5 #FFFFFF;
+    box-shadow: 1px 1px 3px #1a1818;
+    font-size: 1rem; 
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+
+
+
