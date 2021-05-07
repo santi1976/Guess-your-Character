@@ -3,8 +3,24 @@ Creá una función que devuelva tu nombre en "Tolkien" basada en la fecha de tu 
 (se asume que la fecha recibida es una fecha válida) y tu nombre. Las reglas para la conversión son las siguientes:
  */
 
-
 // Nombre -> Tu nombre de atrás hacia adelante
+let submit = document.querySelector("#submit")
+let nombre = document.querySelector("#nombre")
+function reversarNombre() {
+      nombreVal = nombre.value
+      nombreReves = nombreVal.split("").reverse().join("")
+      return nombreReves
+}
+submit.addEventListener('click', reversarNombre);
+
+// Armado de frase final según fecha
+let descMes;
+let descDia;
+function armarFrase() {
+    frase = nombreReves + descMes + descDia;
+    return frase
+} 
+armarFrase() 
 
 ///////////////////////////////////////////////////////////////
 //Lógica de Fecha válida
@@ -53,11 +69,9 @@ ingresoDia.addEventListener('input', valorDia);
 let mes = document.querySelector("#mes")
 function valorMes() {
     let selectedMes = mes.options[mes.selectedIndex];
-    let attrVal = selectedMes.value
     let attrValNum = selectedMes.dataset.attrVal
     numMes = Number(attrValNum)
-    descMes = attrVal
-    //console.log(meses31.indexOf(numMes))
+    descMes = selectedMes.value
 }
 mes.addEventListener('input', valorMes);
 
@@ -77,8 +91,6 @@ let frasesLord = {
     0: '¡Legolas! ¡¿Qué ven tus ojos de elfo?” – Aragorn'
 }
 
-
-
 // Detecta año para evaluar si es Bisiesto y guarda en Frase de acuerdo a último número del año.
 let año = document.getElementById('año')
 function fraseSegunAno() {
@@ -93,11 +105,5 @@ function fraseSegunAno() {
 año.addEventListener('input', fraseSegunAno) 
 
 
-// Armado de frase final según fecha
-/* let frase;
-function armarFrase() {
-    let frase = "nombre al vesre " + descDia + descMes;
-    return frase
-} */
 
-
+ 
