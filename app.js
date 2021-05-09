@@ -6,21 +6,20 @@ Creá una función que devuelva tu nombre en "Tolkien" basada en la fecha de tu 
 // Nombre -> Tu nombre de atrás hacia adelante
 let submit = document.querySelector("#submit")
 let nombre = document.querySelector("#nombre")
+let nombreReves;
 function reversarNombre() {
-      nombreVal = nombre.value
-      nombreReves = nombreVal.split("").reverse().join("")
-      return nombreReves
+    nombreVal = nombre.value
+    nombreR = nombreVal.split("").reverse().join("")
+    nombreReves = nombreR.charAt(0).toUpperCase() + nombreR.substring(1).toLowerCase()
+    if (validarFecha() && fraseSegunAno()) {
+    } else {
+        alert("La fecha que ingresó no es válida")
+    }
+    return nombreReves
 }
 submit.addEventListener('click', reversarNombre);
 
-// Armado de frase final según fecha
-let descMes;
-let descDia;
-function armarFrase() {
-    frase = nombreReves + descMes + descDia;
-    return frase
-} 
-armarFrase() 
+
 
 ///////////////////////////////////////////////////////////////
 //Lógica de Fecha válida
@@ -28,13 +27,9 @@ armarFrase()
 //Evalúa si es año bisiesto
 function esBisiesto() {
     if ((0 === numAño % 4) && (0 !== numAño % 100) || (0 === numAño % 400)) {
-        //console.log("Es año bisiesto")
         return true
-
     } else {
-        //console.log("No es año bisiesto")
         return false
-
     }
 }
 //Evalúa meses con distintos días
@@ -51,8 +46,6 @@ function validarFecha() {
     return fechaValida;
 }
 
-
-
 // Detecta dia e imprime característica del personaje y un atributo numérico para la lógica 
 let ingresoDia = document.querySelector('#dia')
 function valorDia() {
@@ -61,12 +54,14 @@ function valorDia() {
     let attrValNum = selectedDia.dataset.attrVal
     numDia = Number(attrValNum);
     descDia = attrVal;
+
 }
 ingresoDia.addEventListener('input', valorDia);
 
 
 // Detecta mes e imprime característica del personaje y un atributo numérico para la lógica 
 let mes = document.querySelector("#mes")
+let numMes;
 function valorMes() {
     let selectedMes = mes.options[mes.selectedIndex];
     let attrValNum = selectedMes.dataset.attrVal
@@ -102,8 +97,16 @@ function fraseSegunAno() {
     }
     return selectedFrase
 }
-año.addEventListener('input', fraseSegunAno) 
+año.addEventListener('input', fraseSegunAno)
 
 
+// Armado de frase final según fecha
+let descMes;
+let descDia;
+let frase;
+function armarFrase() {
+    frase = nombreReves + descMes + descDia;
+    return frase
+}
 
- 
+
