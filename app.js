@@ -11,24 +11,23 @@ function reversarNombre() {
    
     nombreR = nombre.value.split("").reverse().join("") //Reversa el valor ingresado en campo nombre
     nombreReves = nombreR.charAt(0).toUpperCase() + nombreR.substring(1).toLowerCase() // Convierte todas las letras a minúscula excepto la primera en mayúscula.
-/*     if (validarFecha() && nombreReves !== false) { 
+   if (validarFecha() && fraseSegunAno() && nombreReves != false) { 
           console.log("todo piola kee")
+         
           return true
     } else {
         alert("Los datos ingresados son incorrectos o posee campos incompletos")
-        console.log("falla funcion reversar nombre")
+        //console.log("falla funcion reversar nombre")
         return false
-    } */return true
+    } 
 
 }
 submit.addEventListener('click', function(){
     reversarNombre();
     armarPersonaje();
-    if(frase === true){
+    if(frase.length > 0){
     mostrarPersonaje()
-    } else {
-        console.log("falla addEvenlister que dispara funciones reversarNombre y armarPersonaje y evalúa mostrarPersonaje si frase es true")
-    }
+    } 
 
 })
 
@@ -135,16 +134,11 @@ function armarPersonaje() {
 let div;
 let h3;
 function mostrarPersonaje(){
-    if(armarPersonaje() && reversarNombre()){
-        let div = document.getElementById('container')
-        let h3 = document.createElement("h3")
-        h3.appendChild(document.createTextNode(frase));
-        div.appendChild(h3)
-        console.log("todo piola")
-        return true
+    let div = document.getElementById('container')
+    let h3 = document.createElement("h3")
+    h3.appendChild(document.createTextNode(frase));
+    div.appendChild(h3)
 
-    } 
-    console.log("falla funcion armar personaje")
     
 }
 
