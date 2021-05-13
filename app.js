@@ -8,17 +8,29 @@ let submit = document.querySelector("#submit")
 let nombre = document.querySelector("#nombre")
 let nombreReves;
 function reversarNombre() {
-    nombreVal = nombre.value
-    nombreR = nombreVal.split("").reverse().join("")
-    nombreReves = nombreR.charAt(0).toUpperCase() + nombreR.substring(1).toLowerCase()
-    if (validarFecha() && fraseSegunAno()) {
+   
+    nombreR = nombre.value.split("").reverse().join("") //Reversa el valor ingresado en campo nombre
+    nombreReves = nombreR.charAt(0).toUpperCase() + nombreR.substring(1).toLowerCase() // Convierte todas las letras a minúscula excepto la primera en mayúscula.
+/*     if (validarFecha() && nombreReves !== false) { 
+          console.log("todo piola kee")
+          return true
     } else {
-        alert("La fecha que ingresó no es válida")
-    }
-    return nombreReves
-}
-submit.addEventListener('click', reversarNombre);
+        alert("Los datos ingresados son incorrectos o posee campos incompletos")
+        console.log("falla funcion reversar nombre")
+        return false
+    } */return true
 
+}
+submit.addEventListener('click', function(){
+    reversarNombre();
+    armarPersonaje();
+    if(frase === true){
+    mostrarPersonaje()
+    } else {
+        console.log("falla addEvenlister que dispara funciones reversarNombre y armarPersonaje y evalúa mostrarPersonaje si frase es true")
+    }
+
+})
 
 
 ///////////////////////////////////////////////////////////////
@@ -54,6 +66,7 @@ function valorDia() {
     let attrValNum = selectedDia.dataset.attrVal
     numDia = Number(attrValNum);
     descDia = attrVal;
+    
 
 }
 ingresoDia.addEventListener('input', valorDia);
@@ -67,6 +80,7 @@ function valorMes() {
     let attrValNum = selectedMes.dataset.attrVal
     numMes = Number(attrValNum)
     descMes = selectedMes.value
+    
 }
 mes.addEventListener('input', valorMes);
 
@@ -95,18 +109,44 @@ function fraseSegunAno() {
         numAño = Number(año.value)
         ultNum = Number(key)
     }
+    
     return selectedFrase
 }
 año.addEventListener('input', fraseSegunAno)
 
 
-// Armado de frase final según fecha
+// Armado de personaje según fecha
 let descMes;
 let descDia;
 let frase;
-function armarFrase() {
-    frase = nombreReves + descMes + descDia;
-    return frase
+function armarPersonaje() {
+    if(!reversarNombre() || !descMes || !descDia){
+        console.log("falla funcion armar personaje")
+        return false
+    } else {
+        frase = nombreReves + descMes + descDia;
+        console.log("todo piola")
+        return true
+        
+    }
+    
 }
 
+let div;
+let h3;
+function mostrarPersonaje(){
+    if(armarPersonaje() && reversarNombre()){
+        let div = document.getElementById('container')
+        let h3 = document.createElement("h3")
+        h3.appendChild(document.createTextNode(frase));
+        div.appendChild(h3)
+        console.log("todo piola")
+        return true
 
+    } 
+    console.log("falla funcion armar personaje")
+    
+}
+
+// ver como atajar erroes validando fecha, nombre, etc
+// ver como ir borrando los resultados para que no sea acumulativo
