@@ -8,29 +8,28 @@ let submit = document.querySelector("#submit")
 let nombre = document.querySelector("#nombre")
 let nombreReves;
 function reversarNombre() {
-   
     nombreR = nombre.value.split("").reverse().join("") //Reversa el valor ingresado en campo nombre
-    nombreReves = nombreR.charAt(0).toUpperCase() + nombreR.substring(1).toLowerCase() // Convierte todas las letras a minúscula excepto la primera en mayúscula.
-   if (validarFecha() && fraseSegunAno() && nombreReves != false) { 
-          console.log("todo piola kee")
-         
-          return true
-    } else {
+    if (nombreR.charAt(0).toLowerCase){
+        nombreReves = nombreR.charAt(0).toUpperCase() + nombreR.substring(1).toLowerCase() // Convierte todas las letras a minúscula excepto la primera en mayúscula.
+    }
+    if (validarFecha() && fraseSegunAno() && nombreReves) {
+        return true
+    } else if(!validarFecha() || !fraseSegunAno() || !nombreReves){
         alert("Los datos ingresados son incorrectos o posee campos incompletos")
-        //console.log("falla funcion reversar nombre")
-        return false
-    } 
-
+        console.log(" uno o varios de los campos puede estar vacío ")
+        return false 
+    }
 }
+
 submit.addEventListener('click', function(){
     reversarNombre();
     armarPersonaje();
-    if(frase.length > 0){
-    mostrarPersonaje()
-    } 
-
+    if(frase !== 'undefined' || frase.length){
+        mostrarPersonaje()
+    } else if(frase === 'undefined' || !frase.length ){
+        return "frase doesn't exist yet"
+    }
 })
-
 
 ///////////////////////////////////////////////////////////////
 //Lógica de Fecha válida
@@ -43,6 +42,7 @@ function esBisiesto() {
         return false
     }
 }
+
 //Evalúa meses con distintos días
 let meses31 = [1, 3, 5, 7, 8, 10, 12]; // meses con 31 días
 let meses30 = [4, 6, 9, 11]; // meses con 30 días
@@ -54,32 +54,46 @@ function validarFecha() {
         (meses30.indexOf(numMes) !== -1 && numDia <= 30) ||
         (meses28.indexOf(numMes) !== -1 && numDia <= 28) ||
         (meses28.indexOf(numMes) !== -1 && numDia <= 29 && esBisiesto());
-    return fechaValida;
+    if (fechaValida && valorMes() && valorDia()){
+        return true
+    } else if (!fechaValida || !valorMes() || valorDia()){
+        console.log("Lógica de fechas con problemas")
+        return false
+    }
+    
 }
 
 // Detecta dia e imprime característica del personaje y un atributo numérico para la lógica 
 let ingresoDia = document.querySelector('#dia')
+let numDia;
 function valorDia() {
-    let selectedDia = ingresoDia.options[ingresoDia.selectedIndex];
-    let attrVal = selectedDia.value
-    let attrValNum = selectedDia.dataset.attrVal
+    selectedDia = ingresoDia.options[ingresoDia.selectedIndex];
+    attrValDia = selectedDia.value
+    attrValNum = selectedDia.dataset.attrVal
     numDia = Number(attrValNum);
-    descDia = attrVal;
-    
-
+    descDia = attrValDia;
+    if(numDia && descDia){
+        return true
+    } else if(!numDia ||!descDia){
+        console.log("problemas de valor o attr de input DIA")
+        return false
+    }
 }
 ingresoDia.addEventListener('input', valorDia);
-
 
 // Detecta mes e imprime característica del personaje y un atributo numérico para la lógica 
 let mes = document.querySelector("#mes")
 let numMes;
 function valorMes() {
-    let selectedMes = mes.options[mes.selectedIndex];
-    let attrValNum = selectedMes.dataset.attrVal
+    selectedMes = mes.options[mes.selectedIndex];
+    attrValMes = selectedMes.value
+    attrValNum = selectedMes.dataset.attrVal
     numMes = Number(attrValNum)
-    descMes = selectedMes.value
-    
+    descMes = attrValMes
+    if(numMes && descMes){
+        return true
+    } else if(!numMes || !descMes)
+    console.log("problemas de valor o attr en input MES")
 }
 mes.addEventListener('input', valorMes);
 
@@ -108,7 +122,6 @@ function fraseSegunAno() {
         numAño = Number(año.value)
         ultNum = Number(key)
     }
-    
     return selectedFrase
 }
 año.addEventListener('input', fraseSegunAno)
@@ -119,28 +132,41 @@ let descMes;
 let descDia;
 let frase;
 function armarPersonaje() {
-    if(!reversarNombre() || !descMes || !descDia){
-        console.log("falla funcion armar personaje")
+    if (!nombreReves || !descMes || !descDia || !numAño) {
         return false
-    } else {
+    } else if( nombreReves && descMes && descDia && año) {
         frase = nombreReves + descMes + descDia;
-        console.log("todo piola")
         return true
-        
     }
-    
 }
+
 
 let div;
-let h3;
-function mostrarPersonaje(){
-    let div = document.getElementById('container')
-    let h3 = document.createElement("h3")
-    h3.appendChild(document.createTextNode(frase));
-    div.appendChild(h3)
-
-    
+let h3Element;
+function mostrarPersonaje() {
+    let oldH3Element = document.querySelector('h3.addedH3')
+    if (oldH3Element)
+        oldH3Element.parentNode.removeChild(oldH3Element) // Hace un clear para no replicar ente cada Submit 
+    if (frase && frase.length > 0) {
+        let div = document.getElementById('container')
+        let h3Element = document.createElement("h3")
+        h3Element.className = "addedH3"
+        h3Element.appendChild(document.createTextNode(frase));
+        div.appendChild(h3Element)
+    } else {
+        return false
+    }
 }
 
-// ver como atajar erroes validando fecha, nombre, etc
-// ver como ir borrando los resultados para que no sea acumulativo
+
+/* try {
+    if(!frase.length || frase === "" || numDia ==="" || numMes === "" || numAño === ""){
+        throw new SyntaxError("Los datos son incompletos")
+    }
+} catch (error) {
+    console.log("Los datos son incompletos")
+}  */
+
+
+//Debuggin surge alerta cuando está todo completo
+// CON CAMPO MES VACÍO Y EL RESTO COMPLETO IMPRIMES AL PALABRA "MES" VERFICAR COMO SE CONTRUYO ESE INPUT DE MES ( VALOR ATRIBUTO ETC)
