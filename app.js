@@ -159,14 +159,3 @@ function mostrarPersonaje() {
 }
 
 
-/* try {
-    if(!frase.length || frase === "" || numDia ==="" || numMes === "" || numAño === ""){
-        throw new SyntaxError("Los datos son incompletos")
-    }
-} catch (error) {
-    console.log("Los datos son incompletos")
-}  */
-
-
-//Debuggin surge alerta cuando está todo completo
-// CON CAMPO MES VACÍO Y EL RESTO COMPLETO IMPRIMES AL PALABRA "MES" VERFICAR COMO SE CONTRUYO ESE INPUT DE MES ( VALOR ATRIBUTO ETC)
