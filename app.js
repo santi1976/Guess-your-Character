@@ -167,6 +167,7 @@ function mostrarPersonaje() {
         div.appendChild(h3Element)
         quote.appendChild(quoteElement)
     } else if (!frase || !fraseSegunAno() || !validarFecha()) {
+        
         return false
     }
 }
