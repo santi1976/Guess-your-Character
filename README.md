@@ -1,6 +1,6 @@
-# Guess-your-Character
+# Guess Your Character
 
-## _ Guess your character from Middle Earth _
+## Guess your character from Middle Earth 
 This is my first project doing everything on my own after many courses. It's a work in progress and has the objective to learn to code by doing own projects and having some fun.
 
 ## Goal
