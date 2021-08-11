@@ -1,25 +1,192 @@
-body {
-    background: rgb(98, 151, 158);
-    font-family: Verdana;
+:root{
+    --ff-primary: "Roboto", sans-serif;
 }
 
-h1, h3  {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+body {
+    background: rgb(98, 151, 158);
+    display: grid;
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 1.3125rem; 
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.479);
+   
+}
+
+
+
+h1 {
     text-align: center;
+    color: rgb(240, 240, 224);
+    font-size: 3.5em;   
+    
+}
+
+
+h3 {
+    text-align: center;
+    color: rgb(58, 71, 73);
+    font-size: 2em;
+     
+}                       
+
+.addedH3 {
+    text-align: center;
+    color: black;
+    font-size: 2em;   
+    /* padding: 1.8em; */
+    text-shadow: 2px 2px 6px rgb(231, 227, 212);
+     margin-top: 2em;  
+    letter-spacing: 0.05em;
+    animation:fadeIn 2s;
+}
+
+@keyframes fadeIn{
+    0%{opacity:0;}  
+    50%{opacity:0;}
+    100%{opacity:1;}
+    }
+
+
+.addedH2 {
+    text-align: left;
+    color: rgb(214, 202, 202);
+    font-size: 1.25em;   
+    padding: 3.5em 2em 2em 2em;
+    animation:fadeIn 5.5s;
     
 }
 
 
 #container {
-    text-align: center;
-    padding: 10em;
+    background: rgba(161, 161, 161, 0.349);
+    height: min(57%, 60rem);
+    padding-top: 2em;
+    padding-bottom: 3em;
     margin: 0 auto;
     border-color: #FFFFFF #327CB5 #327CB5 #FFFFFF;
     box-shadow: 1px 1px 3px #1a1818;
-    font-size: 1rem; 
     margin-left: 20%;
-    margin-right: 20%;
+    margin-right: 20%;  
+    backdrop-filter: blur(4px);
+}
+
+.click{
+    background-color: rgba(235, 70, 213, 0.493);
+}
+
+.click:hover {
+    background-color: rgba(87, 116, 87, 0.678);
+}
+
+#dia, #mes, #año, #nombre, #submit{
+    padding: .5em;
+    font-size: 1.3em;               
+    border-color: rgb(73, 134, 106);
+    outline: none;
+    background-color: rgba(103, 126, 94, 0.822);
+    
+    
 
 }
 
+.bg-image{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../Imágenes Tolkien/3209181.jpg"); 
+    background-size: cover; 
+
+}
+
+.bg-image2{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../Imágenes Tolkien/3209181.jpg"); 
+    text-align: center;
+  
+    border-color: #181616;
+    box-shadow: 1px 1px 3px #1a1818;
+    font-size: 1rem; 
+
+}  
 
 
+@media (max-width: 960px){
+    h1 {
+        font-size: 3em;;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+    .addedH2 {
+        font-size: 1em;
+    }
+    .addedH3 {
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 768px){
+    h1 {
+        font-size: 2em;;
+    }
+
+    h3 {
+        font-size: 1.7em;
+    }
+
+    .addedH2 {
+        font-size: .9em;
+    }
+
+    .addedH3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 576px){
+    h1 {
+        font-size: 1.5em;;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+    .addedH2 {
+        font-size: 0.8em;
+    }
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 0.7em;
+    }
+
+    .addedH3 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 375px){
+    h1 {
+        font-size: 1em;;
+    }
+
+    h3 {
+        font-size: 1;
+    }
+    .addedH2 {
+        font-size: 0.5em;
+    }
+
+    .addedH3 {
+        font-size: .8em;
+    }
+}
+
+
+/* Ver responsive en 570 aprox se achican muchos los inputs, hay que darles otro orden.  */
