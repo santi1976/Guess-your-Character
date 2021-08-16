@@ -79,7 +79,7 @@ function valorDia() {
 }
 ingresoDia.addEventListener('input', valorDia);
 
-// Detecta mes e imprime característica del personaje y un atributo numérico para la lógica 
+// Detecta mes y retorna característica del personaje y un atributo numérico para la lógica 
 let mes = document.querySelector("#mes")
 let numMes;
 function valorMes() {
@@ -153,7 +153,7 @@ function mostrarPersonaje() {
     if (oldH3Element)
         oldH3Element.parentNode.removeChild(oldH3Element) // Hace un clear para no replicar ente cada Submit
     if (oldQuote)
-        oldQuote.parentNode.removeChild(oldQuote) // Clear en frase Cita de Tolkien
+        oldQuote.parentNode.removeChild(oldQuote) // Clear en frase Cita de Tolkien 
 
     if (frase && validarFecha() && fraseSegunAno() && nombreReves) {
         div = document.getElementById('container')
