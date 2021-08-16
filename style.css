@@ -215,14 +215,25 @@ h3 {
         padding: 0.5rem;
     }
     h3 {
-        font-size: 1.5em;
+        font-size: 1.7em;
         padding: 0.5rem;
     }
     .addedH2 {
         font-size: .9em;
     }
     .addedH3 {
-        font-size: 1.3em;
+        font-size: 1.6em;
+    }
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 1.8em;
+    }
+
+    #container {
+        padding-top: 1em;
+        padding-bottom: 5em;
+        margin-left: 10%;
+        margin-right: 10%;  
+  
     }
 }
 
@@ -248,7 +259,7 @@ h3 {
     }
 }
 
-@media (max-width: 411px){
+@media (max-width: 414px){
     h1 {
         font-size: 1.4em;
         padding: .5rem .5rem 2.5rem .5rem;
@@ -258,8 +269,8 @@ h3 {
         padding: 0.5rem;
     }
     .addedH2 {
-        font-size: 0.8em;
-        padding-top: 1.7em;
+        font-size: 0.6em;
+        padding-top: .3em;
     }
     .addedH3 {
         font-size: 1.1em;
@@ -307,21 +318,23 @@ h3 {
     
 }
 
-@media (max-width: 280px){
+@media (max-width: 320px){
     h1 {
         font-size: 1.2em;
-        padding: .5rem .5rem 2.5rem .5rem;
+        padding: .5rem .5rem 1.3rem .5rem;
     }
     h3 {
-        font-size: 1.1em;
-        padding: 0.5rem;
+        font-size: 1em;
+        padding: 0.4rem;
     }
     .addedH2 {
         font-size: 0.5em;
-        padding-bottom: .6em;
+        padding-bottom: .3em;
+        margin-bottom: 0.3em;
     }
     .addedH3 {
-        font-size: .9em;
+        font-size: .8em;
+        padding-bottom: .3em;
     }
     #dia, #mes, #año, #nombre, #submit {
         font-size: .7em;
@@ -329,7 +342,7 @@ h3 {
 
     #container {
         padding-top: 1em;
-        padding-bottom: 7em;
+        padding-bottom: 4em;
         margin-left: 9%;
         margin-right: 9%;  
   
