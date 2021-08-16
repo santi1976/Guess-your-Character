@@ -16,7 +16,7 @@ body {
     font-weight: 400;
     font-size: 1.3125rem; 
     line-height: 1.7;
-    color: rgba(0, 0, 0, 0.479);
+    color: rgba(44, 42, 42, 0.479);
    
 }
 
@@ -28,6 +28,9 @@ h1 {
     font-size: 3.5em;   
     padding-left: .3rem;
     padding-right: .3rem;
+    margin-left: .3em;
+    margin-right: .3em;
+    
     
 }
 
@@ -43,9 +46,8 @@ h3 {
     text-align: center;
     color: black;
     font-size: 2em;   
-    /* padding: 1.8em; */
     text-shadow: 2px 2px 6px rgb(231, 227, 212);
-     margin-top: 2em;  
+    margin-top: 2em;  
     letter-spacing: 0.05em;
     animation:fadeIn 2s;
 }
@@ -71,8 +73,8 @@ h3 {
     background: rgba(161, 161, 161, 0.349);
     
     height: min(57%, 60rem);    
-    padding-top: 3em;
-    padding-bottom: 4em;
+    padding-top: 1em;
+    padding-bottom: 5em;
     margin: 0 auto;
     border-color: #FFFFFF #327CB5 #327CB5 #FFFFFF;
     box-shadow: 1px 1px 3px #1a1818;
@@ -92,10 +94,10 @@ h3 {
 
 #dia, #mes, #año, #nombre, #submit{
     padding: .5em;
-    font-size: 1.3em;               
+    font-size: 1.4em;               
     border-color: rgb(73, 134, 106);
     outline: none;
-    background-color: rgba(103, 126, 94, 0.822);
+    background-color: rgba(112, 129, 105, 0.822);
     
     
 
@@ -121,6 +123,73 @@ h3 {
 
 }  
 
+@media (max-width: 1200px){
+    h1 {
+        font-size: 2.4em;
+        padding: 0.5rem;
+    }
+
+    h3 {
+        font-size: 2em;
+        padding: 0.5rem;
+    }
+    .addedH2 {
+        font-size: 1em;
+        padding-top: 1em;
+    }
+    .addedH3 {
+        font-size: 1.8em;
+    }
+    #container {
+        padding-top: 1em;
+        padding-bottom: 15em;
+        margin-left: 10%;
+        margin-right: 10%;  
+  
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 1.8em;
+        padding: .7em;
+        margin: 0.1em;
+    }
+    .bg-image {
+        height: 120vh;
+        width: 100vw;
+      
+    }
+}
+
+@media (max-width: 1024px){
+    h1 {
+        font-size: 3.5em;
+        padding: 0.5rem;
+    }
+
+    h3 {
+        font-size: 2.5em;
+        padding: 0.5rem;
+    }
+    .addedH2 {
+        font-size: 1.4em;
+    }
+    .addedH3 {
+        font-size: 2.2em;
+    }
+    #container {
+        padding-top: 1em;
+        padding-bottom: 12em;
+        margin-left: 10%;
+        margin-right: 10%;  
+  
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 2.2em;
+        padding: .9em;
+        margin: 0.1em;
+    }
+}
 
 @media (max-width: 960px){
     h1 {
@@ -179,45 +248,93 @@ h3 {
     }
 }
 
-@media (max-width: 414px){
+@media (max-width: 411px){
     h1 {
+        font-size: 1.4em;
+        padding: .5rem .5rem 2.5rem .5rem;
+    }
+    h3 {
+        font-size: 1.2em;
+        padding: 0.5rem;
+    }
+    .addedH2 {
+        font-size: 0.8em;
+        padding-top: 1.7em;
+    }
+    .addedH3 {
+        font-size: 1.1em;
+    }
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 1em;
+    }
+
+    #container {
+        padding-top: 1em;
+        padding-bottom: 5em;
+        margin-left: 10%;
+        margin-right: 10%;  
+  
+    }
+}
+
+@media (max-width: 380px){
+    h1 {
+        font-size: 1.2em;
+        padding: .5rem .5rem 2.5rem .5rem;
+    }
+    h3 {
         font-size: 1em;
         padding: 0.5rem;
     }
+    .addedH2 {
+        font-size: 0.6em;
+        padding-bottom: .8em;
+    }
+    .addedH3 {
+        font-size: .9em;
+    }
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: .8em;
+    }
+
+    #container {
+        padding-top: 1em;
+        padding-bottom: 5em;
+        margin-left: 10%;
+        margin-right: 10%;  
+  
+    }
+    
+}
+
+@media (max-width: 280px){
+    h1 {
+        font-size: 1.2em;
+        padding: .5rem .5rem 2.5rem .5rem;
+    }
     h3 {
-        font-size: 0.8em;
+        font-size: 1.1em;
         padding: 0.5rem;
     }
     .addedH2 {
         font-size: 0.5em;
+        padding-bottom: .6em;
     }
     .addedH3 {
-        font-size: .8em;
+        font-size: .9em;
     }
     #dia, #mes, #año, #nombre, #submit {
-        font-size: .6em;
+        font-size: .7em;
     }
-}
 
-@media (max-width: 375px){
-    h1 {
-        font-size: 1em;
-        padding: 0.5rem;
+    #container {
+        padding-top: 1em;
+        padding-bottom: 7em;
+        margin-left: 9%;
+        margin-right: 9%;  
+  
     }
-    h3 {
-        font-size: 0.8em;
-        padding: 0.5rem;
-    }
-    .addedH2 {
-        font-size: 0.5em;
-    }
-    .addedH3 {
-        font-size: .8em;
-    }
-    #dia, #mes, #año, #nombre, #submit {
-        font-size: .6em;
-    }
+    
 }
 
 
-/* Ver responsive en 570 aprox se achican muchos los inputs, hay que darles otro orden.  */
