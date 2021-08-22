@@ -62,7 +62,7 @@ h3 {
 .addedH2 {
     text-align: left;
     color: rgb(214, 202, 202);
-    font-size: 1.25em;   
+    font-size: 0.8em;   
     padding: 3.5em 2em 2em 2em;
     animation:fadeIn 5.5s;
     
@@ -74,7 +74,7 @@ h3 {
     
     height: min(57%, 60rem);    
     padding-top: 1em;
-    padding-bottom: 5em;
+    padding-bottom: 7em;
     margin: 0 auto;
     border-color: #FFFFFF #327CB5 #327CB5 #FFFFFF;
     box-shadow: 1px 1px 3px #1a1818;
@@ -123,77 +123,86 @@ h3 {
 
 }  
 
-@media (max-width: 1200px){
+
+
+
+
+
+
+@media (max-width: 1280px){
     h1 {
-        font-size: 2.4em;
-        padding: 0.5rem;
-    }
-
-    h3 {
-        font-size: 2em;
-        padding: 0.5rem;
-    }
-    .addedH2 {
-        font-size: 1em;
-        padding-top: 1em;
-    }
-    .addedH3 {
-        font-size: 1.8em;
-    }
-    #container {
-        padding-top: 1em;
-        padding-bottom: 15em;
-        margin-left: 10%;
-        margin-right: 10%;  
-  
-    }
-
-    #dia, #mes, #año, #nombre, #submit {
-        font-size: 1.8em;
-        padding: .7em;
-        margin: 0.1em;
-    }
-    .bg-image {
-        height: 120vh;
-        width: 100vw;
-      
-    }
-}
-
-@media (max-width: 1024px){
-    h1 {
-        font-size: 3.5em;
-        padding: 0.5rem;
-    }
-
-    h3 {
         font-size: 2.5em;
         padding: 0.5rem;
     }
+
+    h3 {
+        font-size: 2.1em;
+        padding: 0.5rem;
+    }
     .addedH2 {
-        font-size: 1.4em;
+        font-size: 1em;
+        padding-top: 1em;
     }
     .addedH3 {
-        font-size: 2.2em;
+        font-size: 1.3em;
     }
     #container {
         padding-top: 1em;
-        padding-bottom: 12em;
+        padding-bottom: 10em;
         margin-left: 10%;
         margin-right: 10%;  
+    /*     background-color: rgb(24, 27, 25); */
   
     }
 
     #dia, #mes, #año, #nombre, #submit {
-        font-size: 2.2em;
-        padding: .9em;
+        font-size: 1.3em;
+        padding: .7em;
         margin: 0.1em;
+
     }
+
 }
 
-@media (max-width: 960px){
+@media only screen   
+and (min-width: 1030px)   
+and (max-width: 1366px) {
     h1 {
-        font-size: 3em;
+        font-size: 2.3em;
+        padding: 0.5rem;
+    }
+
+    h3 {
+        font-size: 2.6em;
+        padding: 0.5rem;
+    }
+    .addedH2 {
+        font-size: 1.7em;
+        padding-top: 1em;
+    }
+    .addedH3 {
+        font-size: 2em;
+    }
+    #container {
+        padding-top: 1em;
+        padding-bottom: 11em;
+        margin-left: 10%;
+        margin-right: 10%;  
+/*         background-color: rgb(201, 44, 70);  */
+  
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 2em;
+        padding: .7em;
+        margin: 0.1em;
+
+    }
+} 
+
+@media (max-width: 1024px){
+    h1 {
+        font-size: 2.3em;
         padding: 0.5rem;
     }
 
@@ -202,27 +211,50 @@ h3 {
         padding: 0.5rem;
     }
     .addedH2 {
-        font-size: 1em;
+        font-size: 0.7em;
+        padding-top: 1em;
     }
     .addedH3 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
+    #container {
+        padding-top: 1em;
+        padding-bottom: 11em;
+        margin-left: 10%;
+        margin-right: 10%;  
+   /*      background-color: pink; */
+  
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 1em;
+        padding: .7em;
+        margin: 0.1em;
+
+    }
+
 }
+
+
+
+
 
 @media (max-width: 768px){
     h1 {
-        font-size: 2em;
+        font-size: 1.8em;
         padding: 0.5rem;
     }
     h3 {
-        font-size: 1.7em;
+        font-size: 1.6em;
         padding: 0.5rem;
     }
     .addedH2 {
-        font-size: .9em;
+        font-size: .65em;
+        padding-bottom: 2em;
     }
     .addedH3 {
-        font-size: 1.6em;
+        font-size: 1.1em;
+        padding-bottom: 1.7em;
     }
     #dia, #mes, #año, #nombre, #submit {
         font-size: 1.8em;
@@ -230,95 +262,100 @@ h3 {
 
     #container {
         padding-top: 1em;
-        padding-bottom: 5em;
+        padding-bottom: 9em;
         margin-left: 10%;
         margin-right: 10%;  
+/*         background-color: rgb(82, 180, 156); */
   
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 1.15em;
+        padding: .7em;
+        margin: 0.1em;
+        
     }
 }
 
+@media only screen   
+and (min-device-width : 768px)   
+and (max-device-width : 1024px) {
+    h1 {
+        font-size: 1.8em;
+        padding: 0.5rem;
+    }
+    h3 {
+        font-size: 1.6em;
+        padding: 0.5rem;
+    }
+    .addedH2 {
+        font-size: 1.2em;
+        padding-bottom: 2em;
+    }
+    .addedH3 {
+        font-size: 1.5em;
+        padding-bottom: 1.7em;
+    }
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 1.8em;
+    }
 
+    #container {
+        padding-top: 1em;
+        padding-bottom: 9em;
+        margin-left: 10%;
+        margin-right: 10%;  
+/*         background-color: rgb(82, 180, 156); */
+  
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 1.5em;
+        padding: .7em;
+        margin: 0.1em;
+/*         background-color: aqua; */
+        
+    }
+} 
 @media (max-width: 576px){
     h1 {
-        font-size: 1.5em;
-        padding: 0.5rem;
-    }
-
-    h3 {
         font-size: 1.3em;
-        padding: 0.5rem;
-    }
-    .addedH2 {
-        font-size: 0.8em;
-    }
-    #dia, #mes, #año, #nombre, #submit {
-        font-size: 1.1em;
-    }
-    .addedH3 {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 414px){
-    h1 {
-        font-size: 1.4em;
-        padding: .5rem .5rem 2.5rem .5rem;
+        padding: .5rem .5rem 1.3rem .5rem;
     }
     h3 {
         font-size: 1.2em;
-        padding: 0.5rem;
+        padding: 0.4rem;
     }
     .addedH2 {
-        font-size: 0.6em;
-        padding-top: .3em;
+        font-size: .7em;
+        padding-bottom: .3em;
+        margin-bottom: 0.3em;
     }
     .addedH3 {
-        font-size: 1.1em;
-    }
-    #dia, #mes, #año, #nombre, #submit {
         font-size: 1em;
+        padding-bottom: .4em;
     }
+
 
     #container {
         padding-top: 1em;
-        padding-bottom: 5em;
-        margin-left: 10%;
-        margin-right: 10%;  
+        padding-bottom: 6em;
+        margin-left: 9%;
+        margin-right: 9%;  
+ /*        background-color: rgb(78, 80, 173); */
   
     }
-}
 
-@media (max-width: 380px){
-    h1 {
-        font-size: 1.2em;
-        padding: .5rem .5rem 2.5rem .5rem;
-    }
-    h3 {
-        font-size: 1em;
-        padding: 0.5rem;
-    }
-    .addedH2 {
-        font-size: 0.6em;
-        padding-bottom: .8em;
-    }
-    .addedH3 {
-        font-size: .9em;
-    }
     #dia, #mes, #año, #nombre, #submit {
-        font-size: .8em;
-    }
-
-    #container {
-        padding-top: 1em;
-        padding-bottom: 5em;
-        margin-left: 10%;
-        margin-right: 10%;  
-  
+        font-size: .8em; 
+        padding: .7em;
+        margin: 0.1em;
+        
     }
     
 }
 
-@media (max-width: 320px){
+@media (max-width: 414px){
     h1 {
         font-size: 1.2em;
         padding: .5rem .5rem 1.3rem .5rem;
@@ -328,26 +365,68 @@ h3 {
         padding: 0.4rem;
     }
     .addedH2 {
-        font-size: 0.5em;
+        font-size: .45em;
         padding-bottom: .3em;
         margin-bottom: 0.3em;
     }
     .addedH3 {
         font-size: .8em;
-        padding-bottom: .3em;
-    }
-    #dia, #mes, #año, #nombre, #submit {
-        font-size: .7em;
+
+        padding-bottom: .2em;
     }
 
     #container {
         padding-top: 1em;
-        padding-bottom: 4em;
+        padding-bottom: 8em;
         margin-left: 9%;
         margin-right: 9%;  
+/*         background-color: rgb(166, 46, 214); */
   
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 0.8em; 
+        padding: .7em;
+        margin: 0.1em;
+        
     }
     
 }
 
+@media (max-width: 320px){
+    h1 {
+        font-size: 1.4em;
+        padding: .5rem .5rem 1.3rem .5rem;
+    }
+    h3 {
+        font-size: 1.2em;
+        padding: 0.4rem;
+    }
+    .addedH2 {
+        font-size: .41em;
+        padding-bottom: .3em;
+        margin-bottom: 0.3em;
+    }
+    .addedH3 {
+        font-size: .71em;
+      
 
+    }
+
+    #container {
+        padding-top: 1em;
+        padding-bottom: 8.7em;
+        margin-left: 9%;
+        margin-right: 9%;  
+/*         background-color: rgb(166, 46, 214); */
+  
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 0.7em; 
+        padding: .7em;
+        margin: 0.1em;
+        
+    }
+    
+}
