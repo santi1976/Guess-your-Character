@@ -151,7 +151,8 @@ h3 {
         padding-bottom: 10em;
         margin-left: 10%;
         margin-right: 10%;  
-    /*     background-color: rgb(24, 27, 25); */
+        background-color: rgb(24, 27, 25); 
+         
   
     }
 
@@ -164,43 +165,46 @@ h3 {
 
 }
 
+
+
 @media only screen   
 and (min-width: 1030px)   
 and (max-width: 1366px) {
     h1 {
-        font-size: 2.3em;
+        font-size: 2em;
         padding: 0.5rem;
     }
 
     h3 {
-        font-size: 2.6em;
+        font-size: 1.8em;
         padding: 0.5rem;
     }
     .addedH2 {
-        font-size: 1.7em;
+        font-size: 1.1em;
         padding-top: 1em;
     }
     .addedH3 {
-        font-size: 2em;
+        font-size: 1.7em;
     }
     #container {
         padding-top: 1em;
-        padding-bottom: 11em;
+        padding-bottom: 10em;
         margin-left: 10%;
         margin-right: 10%;  
-/*         background-color: rgb(201, 44, 70);  */
+         background-color: rgb(201, 44, 70);  
   
     }
 
     #dia, #mes, #año, #nombre, #submit {
-        font-size: 2em;
-        padding: .7em;
-        margin: 0.1em;
+        font-size: 1.3em;
+        padding: 1em;
+        
+        margin: 0.2em;
 
     }
 } 
 
-@media (max-width: 1024px){
+ @media (max-width: 1024px){
     h1 {
         font-size: 2.3em;
         padding: 0.5rem;
@@ -222,7 +226,7 @@ and (max-width: 1366px) {
         padding-bottom: 11em;
         margin-left: 10%;
         margin-right: 10%;  
-   /*      background-color: pink; */
+        background-color: pink; 
   
     }
 
@@ -233,7 +237,7 @@ and (max-width: 1366px) {
 
     }
 
-}
+} 
 
 
 
@@ -265,7 +269,7 @@ and (max-width: 1366px) {
         padding-bottom: 9em;
         margin-left: 10%;
         margin-right: 10%;  
-/*         background-color: rgb(82, 180, 156); */
+      background-color: rgb(82, 180, 156); 
   
     }
 
@@ -305,7 +309,7 @@ and (max-device-width : 1024px) {
         padding-bottom: 9em;
         margin-left: 10%;
         margin-right: 10%;  
-/*         background-color: rgb(82, 180, 156); */
+    background-color: rgb(82, 180, 156); 
   
     }
 
@@ -313,10 +317,16 @@ and (max-device-width : 1024px) {
         font-size: 1.5em;
         padding: .7em;
         margin: 0.1em;
-/*         background-color: aqua; */
+       background-color: aqua; 
         
     }
 } 
+
+
+
+
+
+
 @media (max-width: 576px){
     h1 {
         font-size: 1.3em;
@@ -342,7 +352,7 @@ and (max-device-width : 1024px) {
         padding-bottom: 6em;
         margin-left: 9%;
         margin-right: 9%;  
- /*        background-color: rgb(78, 80, 173); */
+      background-color: rgb(78, 80, 173); 
   
     }
 
@@ -354,6 +364,7 @@ and (max-device-width : 1024px) {
     }
     
 }
+
 
 @media (max-width: 414px){
     h1 {
@@ -380,7 +391,7 @@ and (max-device-width : 1024px) {
         padding-bottom: 8em;
         margin-left: 9%;
         margin-right: 9%;  
-/*         background-color: rgb(166, 46, 214); */
+      background-color: rgb(166, 46, 214); 
   
     }
 
@@ -392,6 +403,7 @@ and (max-device-width : 1024px) {
     }
     
 }
+
 
 @media (max-width: 320px){
     h1 {
@@ -418,7 +430,7 @@ and (max-device-width : 1024px) {
         padding-bottom: 8.7em;
         margin-left: 9%;
         margin-right: 9%;  
-/*         background-color: rgb(166, 46, 214); */
+      background-color: rgb(166, 46, 214); 
   
     }
 
@@ -430,3 +442,41 @@ and (max-device-width : 1024px) {
     }
     
 }
+
+ @media only screen   
+and (min-width: 1366px)   
+and (max-width: 625px) {
+    h1 {
+        font-size: 2.3em;
+        padding: 0.5rem;
+    }
+
+    h3 {
+        font-size: 2.6em;
+        padding: 0.5rem;
+    }
+    .addedH2 {
+        font-size: 1.7em;
+        padding-top: 1em;
+    }
+    .addedH3 {
+        font-size: 1.7em;
+    }
+    #container {
+        padding-top: 1em;
+        padding-bottom: 11em;
+        margin-left: 10%;
+        margin-right: 10%;  
+        
+  
+    }
+
+    #dia, #mes, #año, #nombre, #submit {
+        font-size: 1em;
+        padding: .7em;
+        margin: 0.1em;
+        background-color: rgb(26, 42, 184); 
+
+    }
+} 
+
