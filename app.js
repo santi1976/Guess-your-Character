@@ -1,9 +1,6 @@
-/*  Tu nombre Universo Tolkien
-Creá una función que devuelva tu nombre en "Tolkien" basada en la fecha de tu cumpleaños 
-(se asume que la fecha recibida es una fecha válida) y tu nombre. Las reglas para la conversión son las siguientes:
- */
 
-// Nombre -> Tu nombre de atrás hacia adelante
+
+// Toma el nombre ingresado del input y lo reversa -- Reverse the name from input name plus error handling
 let submit = document.querySelector("#submit")
 let nombre = document.querySelector("#nombre")
 let nombreReves;
@@ -20,6 +17,8 @@ function reversarNombre() {
     }
 }
 
+
+
 submit.addEventListener('click', function () {
     reversarNombre();
     armarPersonaje();
@@ -30,10 +29,9 @@ submit.addEventListener('click', function () {
     }
 })
 
-///////////////////////////////////////////////////////////////
-//Lógica de Fecha válida
 
-//Evalúa si es año bisiesto
+
+//Evalúa si es año bisiesto - Evaluates if it's a leap year
 function esBisiesto() {
     if ((0 === numAño % 4) && (0 !== numAño % 100) || (0 === numAño % 400)) {
         return true
@@ -42,7 +40,7 @@ function esBisiesto() {
     }
 }
 
-//Evalúa meses con distintos días
+//Función que valida Fecha de acuardo a la cantidad de días de cada mes -- Function that validates date according to qty of days in a month
 let meses31 = [1, 3, 5, 7, 8, 10, 12]; // meses con 31 días
 let meses30 = [4, 6, 9, 11]; // meses con 30 días
 let meses28 = [2]; // único mes con 28 días, a no ser que sea bisiesto (29)
@@ -59,10 +57,9 @@ function validarFecha() {
         return false
     }
     return true
-
 }
 
-// Detecta dia e imprime característica del personaje y un atributo numérico para la lógica 
+// Detecta día y retorna dos atributos: origen del personaje y el número del día -- From Day (Dia) selection brings two attributes: Character's description and number value of month
 let ingresoDia = document.querySelector('#dia')
 let numDia;
 function valorDia() {
@@ -79,7 +76,7 @@ function valorDia() {
 }
 ingresoDia.addEventListener('input', valorDia);
 
-// Detecta mes y retorna característica del personaje y un atributo numérico para la lógica 
+// Detecta mes y retorna dos atributos: característica del personaje y el número del mes -- From Month selection brings two attributes: Character's description and number value of month
 let mes = document.querySelector("#mes")
 let numMes;
 function valorMes() {
@@ -96,8 +93,8 @@ function valorMes() {
 mes.addEventListener('input', valorMes);
 
 
-///////////////////////////////////////////////////////////////////////////////////
-// Muestra el último número del año y matchea con index de array
+
+// Asignación de números a Citas del Tolkien -- Number assignments to Tolkien Quotes
 let frasesLord = {
     0: "'Si con mi vida, o con mi muerte puedo protegerte, lo haré… cuenta con mi espada, y con mi arco y con mi hacha' – Aragorn, Legolas y Gimli",
     1: "'Un mago nunca llega tarde, ni pronto, llega exactamente cuando se lo propone” – Gandalf el Gris.'",
@@ -111,7 +108,7 @@ let frasesLord = {
     9: '¡Legolas! ¡¿Qué ven tus ojos de elfo? – Aragorn'
 }
 
-// Detecta año para evaluar si es Bisiesto y guarda en Frase de acuerdo a último número del año.
+// Detects year input and assigns a Quote according to last number of year -- Detecta número del año para asignar una cita de Tolkien de acuerdo al último número del año.
 let año = document.getElementById('año')
 let test;
 function fraseSegunAno() {
@@ -127,7 +124,7 @@ function fraseSegunAno() {
 año.addEventListener('input', fraseSegunAno)
 
 
-// Armado de personaje según fecha
+// Join values that results in name of character plus description -- Une valores para el nombre del personaje y su descripción según valores de fecha
 let descMes;
 let descDia;
 let frase;
@@ -141,6 +138,8 @@ function armarPersonaje() {
 }
 
 
+
+//Muestra el personaje resultado del nombre al revés más su descripción y origen y una cita aleatoria de Tolkien -- Shows the character resulting from reversed name + description and origin and a random quote from Tolkien's Lord of the Rings
 let div;
 let h3Element;
 let quoteElement;
@@ -151,11 +150,11 @@ function mostrarPersonaje() {
     let oldQuote = document.querySelector("h2.addedH2")
 
     if (oldH3Element)
-        oldH3Element.parentNode.removeChild(oldH3Element) // Hace un clear para no replicar ente cada Submit
+        oldH3Element.parentNode.removeChild(oldH3Element) // Realiza un clear de existir un appended text previo -- Clears previous appended text
     if (oldQuote)
-        oldQuote.parentNode.removeChild(oldQuote) // Clear en frase Cita de Tolkien 
+        oldQuote.parentNode.removeChild(oldQuote) // Remueve cita previa -- Removes previous quote.
 
-    if (frase && validarFecha() && fraseSegunAno() && nombreReves) {
+    if (frase && validarFecha() && fraseSegunAno() && nombreReves) { // Si no hay errores previos muestra el personaje creado y la cita de Tolkien -- If there are no error, show character and quote
         div = document.getElementById('container')
         quote = document.querySelector("#quote")
         quoteElement = document.createElement("h2")
@@ -167,7 +166,6 @@ function mostrarPersonaje() {
         div.appendChild(h3Element)
         quote.appendChild(quoteElement)
     } else if (!frase || !fraseSegunAno() || !validarFecha()) {
-        
         return false
     }
 }
